@@ -27,12 +27,14 @@ class Timer
 
 	def conversion(seconds, minutes, hours)
 		if seconds > 60
+			#(seconds/60) = (full minutes within total seconds)
 			minutes += seconds/60
-			seconds = seconds - minutes*60
+			seconds = seconds - (seconds/60)*60
 		end
 		if minutes > 60
+			#(minutes/60) = (full hours within total minutes)
 			hours += minutes/60
-			minutes = minutes - hours*60
+			minutes = minutes - (minutes/60)*60
 		end
 		[seconds,minutes,hours]
 	end
